@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "pages:build": "pnpm dlx @cloudflare/next-on-pages",
-    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static"
+    "build:worker": "npx @opennextjs/cloudflare build",
+    "deploy": "pnpm run build:worker && wrangler deploy"
   },
   "dependencies": {
     "lucide-react": "^1.66.0",
