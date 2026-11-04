@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { authService } from '../services/authService';
 import { useAuthStore } from '@/stores/useAuthStore';
 import { Building2, Lock, User, Phone, Loader2, AlertCircle } from 'lucide-react';
@@ -41,8 +42,8 @@ export const LoginView: React.FC = () => {
     <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-emerald-900/10">
         <div className="bg-emerald-950 p-6 text-white text-center">
-          <div className="w-14 h-14 bg-emerald-800 rounded-2xl mx-auto flex items-center justify-center shadow-inner border border-emerald-700 mb-3">
-            <Building2 className="w-7 h-7 text-emerald-300" />
+          <div className="w-14 h-14 rounded-full mx-auto overflow-hidden bg-white flex items-center justify-center border border-emerald-700 shadow-inner mb-3">
+            <Image src="/logo.png" alt="Liqaa'i Rabbi Logo" width={60} height={60} className="object-cover w-full h-full" />
           </div>
           <h1 className="text-xl font-bold tracking-wide">Liqaa'i Rabbi</h1>
           <p className="text-xs text-emerald-300/80 mt-1">Portal Anggota Fardhu Kifayah</p>
