@@ -75,11 +75,20 @@ export interface MatrixData {
 /**
  * Generic API Fetcher for Google Apps Script backend supporting actions & year partitions
  */
-export async function fetchFromAppsScript(action: string, extraParams = '') {
-  const response = await fetch(`${APPS_SCRIPT_URL}?action=${action}${extraParams}`);
-  const json = await response.json();
-  if (json.status !== 'success') {
-    throw new Error(json.message || 'Gagal mengambil data dari Google Apps Script');
+
+export async function fetchFromAppsScript(action: string, params: string = '') {
+  const url = `${process.env.NEXT_PUBLIC_APPS_SCRIPT_URL}?action=${action}${params}`;
+  
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error(`Apps Script HTTP error: ${res.status}`);
+      return { records: [], columns: [] }; // Safe fallback
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch from Apps Script:', error);
+    return { records: [], columns: [] }; // Prevent 500 crash
   }
-  return json.data;
 }
