@@ -10,7 +10,7 @@ import { ProfileView } from '@/features/auth/components/ProfileView';
 import { DuesLayout } from '@/features/dues/components/DuesLayout';
 import { ExpensesView } from '@/features/expenses/components/ExpenseView';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export default function DashboardPage() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
