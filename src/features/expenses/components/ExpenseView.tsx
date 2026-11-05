@@ -214,7 +214,7 @@ function EventBlockCard({
         <div className="bg-emerald-900 p-3.5 rounded-xl border border-emerald-800 text-white flex items-center justify-between">
           <div>
             <span className="text-[10px] font-semibold text-emerald-300 uppercase tracking-wider">
-              Total Acara Ini
+              Total Pengeluaran (Grand Total)
             </span>
             <p className="text-lg font-bold text-emerald-300 mt-0.5">
               {eventBlock.summary.grandTotal}

@@ -234,8 +234,8 @@ function SaguHatiView() {
             <table className="w-full text-left text-xs md:text-sm border-collapse">
               <thead>
                 <tr className="bg-emerald-900 text-white font-semibold">
-                  <th className="p-3.5 w-12 text-center sticky left-0 bg-emerald-900 z-20 shadow-md">No</th>
-                  <th className="p-3.5 sticky left-12 bg-emerald-900 z-20 shadow-md min-w-[200px] border-l border-emerald-800">
+                  <th className={`p-3.5 w-12 text-center ${ userIsAdmin ? 'sticky left-0' : '' } bg-emerald-900 z-20 shadow-md`}>No</th>
+                  <th className={`p-3.5 ${ userIsAdmin ? 'sticky left-12' : '' } bg-emerald-900 z-20 shadow-md min-w-[200px] border-l border-emerald-800`}>
                     <Users className="inline w-4 h-4 mr-1 text-emerald-300" /> Kepala Keluarga
                   </th>
                   {data?.columns?.map((col: string) => (
