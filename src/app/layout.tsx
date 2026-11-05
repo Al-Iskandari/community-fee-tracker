@@ -1,6 +1,6 @@
 export const runtime = 'nodejs';
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,11 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Liqaa'i Rabbi - Fardhu Kifayah",
-  description: "Portal Anggota Fardhu Kifayah",
-  icons: {
-    icon: '/logo.png',
+  title: "Liqaa'i Rabbi",
+  description: "Aplikasi Keuangan & Rekapitulasi Iuran",
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: "Liqaa'i Rabbi",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#082f49',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1, // Prevents awkward zooming on elderly users' phones
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

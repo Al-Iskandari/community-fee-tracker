@@ -9,6 +9,7 @@ import { LoginView } from '@/features/auth/components/LoginView';
 import { ProfileView } from '@/features/auth/components/ProfileView';
 import { DuesLayout } from '@/features/dues/components/DuesLayout';
 import { ExpensesView } from '@/features/expenses/components/ExpenseView';
+import { InstallPrompt } from '@/components/InstallPrompt';
 
 export const runtime = 'nodejs';
 
@@ -29,6 +30,8 @@ export default function DashboardPage() {
         {activeTab === 'profile' && <ProfileView />}
       </main>
       <BottomNav />
+
+      <InstallPrompt />
     </div>
   );
 }
