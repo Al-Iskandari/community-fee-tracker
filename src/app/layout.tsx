@@ -15,8 +15,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Liqaa'i Rabbi",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://liqaai-rabbi.jhoniimx.workers.dev/'),
+  title: {
+    default: "Liqaa'i Rabbi",
+    template: "%s | Liqaa'i Rabbi",
+  },
   description: "Aplikasi Keuangan & Rekapitulasi Iuran",
+  openGraph: {
+    title: "Liqaa'i Rabbi",
+    description: "Aplikasi Keuangan & Rekapitulasi Iuran",
+    url: 'https://liqaai-rabbi.jhoniimx.workers.dev/',
+    siteName: "Liqaa'i Rabbi",
+    locale: 'id_ID',
+    type: 'website',
+    images: [
+      {
+        url: 'https://liqaai-rabbi.jhoniimx.workers.dev/opengraph-image.png', // Automatically matches your static preview image in src/app or public/
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: "Liqaa'i Rabbi Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Liqaa'i Rabbi",
+    description: "Aplikasi Keuangan & Rekapitulasi Iuran",
+    images: ['/opengraph-image.png'],
+  },
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
